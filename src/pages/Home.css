@@ -1,0 +1,30 @@
+.home {
+  padding: 30px;
+  background-color: #f0f9ff;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 1000px;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.1);
+}
+
+section > h2 {
+  color: #508b6b;
+  margin-bottom: 10px;
+}
+
+section > p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+section > ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+section > ul > li {
+  margin-bottom: 8px;
+}

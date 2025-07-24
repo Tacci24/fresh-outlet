@@ -1,0 +1,12 @@
+.gas-about {
+    border: 2px solid #ff6f00;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #fff3e0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gas-about h2 {
+    color: #e65100;
+}
