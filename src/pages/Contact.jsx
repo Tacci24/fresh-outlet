@@ -1,5 +1,5 @@
-import React from 'react';
-import './Contact.css';
+import React from "react";
+import "./Contact.css";
 
 function Contact() {
   return (
@@ -15,7 +15,8 @@ function Contact() {
         <strong>Details:</strong> Open from 8AM to 10PM, Monday to Saturday.
       </p>
       <p>
-        <strong>Email:</strong> <a href="mailto:gideonmwimano@gmail.com">gideonmwimano@gmail.com</a>
+        <strong>Email:</strong>
+        <a href="mailto:mwinamigideon@gmail.com"> mwinamigideon@gmail.com</a>
       </p>
     </div>
   );

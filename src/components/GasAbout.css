@@ -1,12 +1,15 @@
-.gas-about {
-    border: 2px solid #ff6f00;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: #fff3e0;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+.gas-title {
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.gas-about h2 {
-    color: #e65100;
+.gas-content {
+  margin-bottom: 2.5rem;
+}
+
+.gas-content p {
+  margin-bottom: 1rem;
 }
