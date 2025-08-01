@@ -1,0 +1,87 @@
+.footer {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 2rem;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+}
+
+.welcome h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.welcome p {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.footer-contact h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-contact-list {
+  list-style: none;
+  gap: 0.8rem;
+}
+
+.footer-contact-list strong {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.footer-contact-list a {
+  text-decoration: none;
+  color: rgb(121, 165, 165);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.footer-contact-list a:hover {
+  color: rgb(38, 201, 201);
+  font-weight: bold;
+  transform: translateX(5px);
+  text-decoration: underline;
+}
+
+.quick-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-links h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(121, 165, 165);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: rgb(38, 201, 201);
+  transform: translateX(5px);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.copyright {
+  border-top: 2px solid rgb(36, 61, 61);
+  text-align: center;
+  padding-top: 0.5rem;
+}

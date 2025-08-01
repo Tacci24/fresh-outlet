@@ -21,7 +21,6 @@ body.dark {
 
 .main-header {
   background-color: #28a745;
-  padding: 0.75rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -33,6 +32,7 @@ body.dark {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0.75rem 1.5rem;
 }
 
 .logo {
@@ -83,6 +83,16 @@ body.dark {
   color: #d4f7db;
 }
 
+.main-content {
+  padding-top: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+}
+
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
@@ -109,9 +119,4 @@ body.dark {
   .menu-toggle {
     display: none;
   }
-}
-
-.main-content {
-  padding: 1.5rem;
-  margin: auto;
 }

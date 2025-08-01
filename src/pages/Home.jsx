@@ -3,7 +3,7 @@ import vegetables from "../data/vegetables";
 import gasBrands from "../data/gas";
 import "./Home.css";
 
-function Home() {
+function Home({ expandedCards, toggleCard }) {
   return (
     <main className="home-container">
       <h1 className="home-title">Welcome to Kibanda</h1>
@@ -11,22 +11,38 @@ function Home() {
       <section className="section">
         <h2 className="section-title">Gas Brands and Prices</h2>
         <div className="gas-grid">
-          {gasBrands.map((brand, index) => (
-            <div key={index} className="gas-card">
-              <img src={brand.image} alt={brand.name} className="gas-image" />
-              <h3 className="brand-name">{brand.name}</h3>
-              <p className="availability">{brand.availability}</p>
+          {gasBrands.map((brand, index) => {
+            const isExpanded = expandedCards.includes(index);
+            const visibleCylinders = isExpanded
+              ? brand.cylinders
+              : brand.cylinders.slice(0, 2);
 
-              <ul className="cylinder-list">
-                {brand.cylinders.map((cylinder, idx) => (
-                  <li key={idx} className="cylinder-item">
-                    <span>{cylinder.size}</span>
-                    <strong>${cylinder.priceUSD.toFixed(2)}</strong>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            return (
+              <div key={index} className="gas-card">
+                <img src={brand.image} alt={brand.name} className="gas-image" />
+                <h3 className="brand-name">{brand.name}</h3>
+                <p className="availability">{brand.availability}</p>
+
+                <ul className="cylinder-list">
+                  {visibleCylinders.map((cylinder, idx) => (
+                    <li key={idx} className="cylinder-item">
+                      <span>{cylinder.size}</span>
+                      <strong>${cylinder.priceUSD.toFixed(2)}</strong>
+                    </li>
+                  ))}
+                </ul>
+
+                {brand.cylinders.length > 2 && (
+                  <button
+                    className="see-more-btn"
+                    onClick={() => toggleCard(index)}
+                  >
+                    {isExpanded ? "See Less" : "See More"}
+                  </button>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 

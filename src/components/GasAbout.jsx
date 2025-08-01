@@ -2,7 +2,7 @@ import React from "react";
 import gasBrands from "../data/gas";
 import "./GasAbout.css";
 
-function GasAbout() {
+function GasAbout({ expandedCards, toggleCard }) {
   return (
     <section className="gas-about">
       <h2 className="gas-title">About Our Gas</h2>
@@ -25,23 +25,40 @@ function GasAbout() {
         </p>
         <p>The following are the available brands:</p>
       </div>
-      <div className="gas-grid">
-        {gasBrands.map((brand, index) => (
-          <div key={index} className="gas-card">
-            <img src={brand.image} alt={brand.name} className="gas-image" />
-            <h3 className="brand-name">{brand.name}</h3>
-            <p className="availability">{brand.availability}</p>
 
-            <ul className="cylinder-list">
-              {brand.cylinders.map((cylinder, idx) => (
-                <li key={idx} className="cylinder-item">
-                  <span>{cylinder.size}</span>
-                  <strong>{cylinder.priceUSD}</strong>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <div className="gas-grid">
+        {gasBrands.map((brand, index) => {
+          const isExpanded = expandedCards.includes(index);
+          const visibleCylinders = isExpanded
+            ? brand.cylinders
+            : brand.cylinders.slice(0, 2);
+
+          return (
+            <div key={index} className="gas-card">
+              <img src={brand.image} alt={brand.name} className="gas-image" />
+              <h3 className="brand-name">{brand.name}</h3>
+              <p className="availability">{brand.availability}</p>
+
+              <ul className="cylinder-list">
+                {visibleCylinders.map((cylinder, idx) => (
+                  <li key={idx} className="cylinder-item">
+                    <span>{cylinder.size}</span>
+                    <strong>${cylinder.priceUSD.toFixed(2)}</strong>
+                  </li>
+                ))}
+              </ul>
+
+              {brand.cylinders.length > 2 && (
+                <button
+                  className="see-more-btn"
+                  onClick={() => toggleCard(index)}
+                >
+                  {isExpanded ? "See Less" : "See More"}
+                </button>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

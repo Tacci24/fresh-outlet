@@ -5,3 +5,9 @@
   margin: auto;
   padding: 2rem;
 }
+
+.about > *:not(:last-child) {
+  border-bottom: 0.125rem solid #e0e0e0;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
