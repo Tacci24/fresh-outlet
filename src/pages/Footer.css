@@ -49,6 +49,7 @@
   font-size: 0.8rem;
   font-weight: 400;
 }
+
 .footer-contact-list a:hover {
   color: rgb(38, 201, 201);
   font-weight: bold;
@@ -78,6 +79,33 @@
   transform: translateX(5px);
   font-size: 1rem;
   font-weight: bold;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.socials h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-socials {
+  list-style: none;
+}
+
+.footer-socials li a {
+  text-decoration: none;
+  color: rgb(121, 165, 165);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.footer-socials a:hover {
+  color: rgb(38, 201, 201);
+  font-weight: bold;
+  transform: translateX(5px);
 }
 
 .copyright {
