@@ -1,11 +1,568 @@
-.veg-title {
-  color: var(--accent);
+/* CSS Variables for Vegetables About Section */
+:root {
+  --veg-primary-color: #27ae60;
+  --veg-secondary-color: #2ecc71;
+  --veg-accent-color: #229954;
+
+  --veg-text-primary: #2c3e50;
+  --veg-text-secondary: #5a6c7d;
+  --veg-text-light: #7f8c8d;
+
+  --veg-bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --veg-bg-card: rgba(255, 255, 255, 0.95);
+  --veg-bg-accent: rgba(39, 174, 96, 0.05);
+
+  --veg-border-color: rgba(39, 174, 96, 0.1);
+
+  --veg-shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.05);
+  --veg-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --veg-shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+
+  --veg-gradient-primary: linear-gradient(90deg, #27ae60, #2ecc71);
+}
+
+/* Dark Theme Variables */
+html.dark,
+body.dark {
+  --veg-bg-primary: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --veg-bg-card: rgba(52, 73, 94, 0.95);
+  --veg-bg-accent: rgba(39, 174, 96, 0.1);
+
+  --veg-text-primary: #ecf0f1;
+  --veg-text-secondary: #bdc3c7;
+  --veg-text-light: #95a5a6;
+
+  --veg-border-color: rgba(39, 174, 96, 0.2);
+}
+
+/* VegAbout Section Styles */
+.veg-about {
+  background: var(--veg-bg-primary);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.veg-about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grain" width="100" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23e9ecef" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.veg-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header */
+.section-header {
   text-align: center;
-  margin: 1rem 0;
+  margin-bottom: 4rem;
+}
+
+.veg-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--veg-text-primary);
+  margin-bottom: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.veg-title::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: var(--veg-gradient-primary);
+  border-radius: 2px;
+}
+
+.veg-subtitle {
+  font-size: 1.3rem;
+  color: var(--veg-text-light);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Introduction Section */
+.veg-intro {
+  margin-bottom: 5rem;
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.intro-card {
+  background: var(--veg-bg-card);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--veg-shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--veg-border-color);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.intro-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--veg-shadow-lg);
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+.intro-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.intro-card h3 {
   font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--veg-text-primary);
+  margin-bottom: 1rem;
+}
+
+.intro-card p {
+  color: var(--veg-text-secondary);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* Freshness Promise */
+.freshness-promise {
+  background: var(--veg-bg-accent);
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid var(--veg-border-color);
+}
+
+.freshness-promise h3 {
+  font-size: 2rem;
+  color: var(--veg-primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.freshness-promise p {
+  font-size: 1.1rem;
+  color: var(--veg-text-secondary);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.promise-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stat {
+  padding: 1.5rem;
+  background: var(--veg-bg-card);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--veg-border-color);
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(39, 174, 96, 0.4);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--veg-primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--veg-text-secondary);
   font-weight: 500;
 }
 
-.veg-content p {
+/* Vegetables Showcase */
+.vegetables-showcase {
+  margin-bottom: 4rem;
+}
+
+.showcase-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--veg-text-primary);
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.vegetable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Vegetable Cards */
+.veg-card {
+  background: var(--veg-bg-card);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--veg-shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid var(--veg-border-color);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.veg-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--veg-shadow-lg);
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+.veg-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.veg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.veg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 174, 96, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.veg-card:hover .veg-overlay {
+  opacity: 1;
+}
+
+.veg-card:hover .veg-image {
+  transform: scale(1.1);
+}
+
+.quick-view {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.freshness-indicator {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+}
+
+.fresh-badge {
+  background: var(--veg-gradient-primary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Vegetable Content */
+.veg-content {
+  padding: 2rem;
+}
+
+.veg-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--veg-text-primary);
+  margin-bottom: 0.8rem;
+}
+
+.veg-desc {
+  color: var(--veg-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Vegetable Details */
+.veg-details {
   margin-bottom: 1rem;
+}
+
+.veg-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.price-container,
+.stock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.price-label,
+.stock-label {
+  font-size: 0.8rem;
+  color: var(--veg-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.veg-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--veg-primary-color);
+}
+
+.veg-stock {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.veg-stock.available {
+  background: rgba(46, 204, 113, 0.1);
+  color: var(--veg-primary-color);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.veg-stock.limited {
+  background: rgba(243, 156, 18, 0.1);
+  color: #f39c12;
+  border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+/* Vegetable Actions */
+.veg-actions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+  background: var(--veg-gradient-primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+  background: linear-gradient(135deg, #229954, #27ae60);
+}
+
+.wishlist-btn {
+  background: transparent;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-btn:hover {
+  background: #e74c3c;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Benefits Section */
+.veg-benefits {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.veg-benefits h3 {
+  font-size: 2.2rem;
+  color: var(--veg-text-primary);
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  padding: 2rem;
+  background: var(--veg-bg-card);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--veg-border-color);
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--veg-shadow-md);
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.benefit-item h4 {
+  font-size: 1.2rem;
+  color: var(--veg-text-primary);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.benefit-item p {
+  color: var(--veg-text-secondary);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .veg-container {
+    padding: 0 1rem;
+  }
+
+  .veg-title {
+    font-size: 2.2rem;
+  }
+
+  .veg-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .intro-content {
+    grid-template-columns: 1fr;
+  }
+
+  .vegetable-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promise-stats {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .veg-meta {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .price-container,
+  .stock-container {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .veg-actions {
+    flex-direction: column;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+  }
+
+  .wishlist-btn {
+    align-self: center;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .veg-about {
+    padding: 2rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .veg-title {
+    font-size: 1.8rem;
+  }
+
+  .intro-card {
+    padding: 1.5rem;
+  }
+
+  .freshness-promise {
+    padding: 2rem;
+  }
+
+  .veg-content {
+    padding: 1.5rem;
+  }
+
+  .benefit-item {
+    padding: 1.5rem;
+  }
 }

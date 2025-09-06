@@ -1,88 +1,327 @@
+/* CSS Variables for About Section Theme Management */
+:root {
+  --about-primary-color: #3498db;
+  --about-secondary-color: #2ecc71;
+  --about-accent-color: #27ae60;
+
+  --about-text-primary: #2c3e50;
+  --about-text-secondary: #5a6c7d;
+  --about-text-light: #7f8c8d;
+
+  --about-bg-primary: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --about-bg-card: rgba(255, 255, 255, 0.95);
+  --about-bg-accent: rgba(52, 152, 219, 0.05);
+
+  --about-border-color: rgba(255, 255, 255, 0.2);
+
+  --about-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --about-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --about-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  --about-gradient-primary: linear-gradient(90deg, #3498db, #2ecc71);
+  --about-gradient-vision: linear-gradient(
+    135deg,
+    rgba(52, 152, 219, 0.05),
+    rgba(155, 89, 182, 0.05)
+  );
+  --about-gradient-mission: linear-gradient(
+    135deg,
+    rgba(46, 204, 113, 0.05),
+    rgba(39, 174, 96, 0.05)
+  );
+  --about-gradient-goals: linear-gradient(
+    135deg,
+    rgba(230, 126, 34, 0.05),
+    rgba(211, 84, 0, 0.05)
+  );
+  --about-gradient-values: linear-gradient(
+    135deg,
+    rgba(231, 76, 60, 0.05),
+    rgba(192, 57, 43, 0.05)
+  );
+  --about-gradient-story: linear-gradient(
+    135deg,
+    rgba(142, 68, 173, 0.05),
+    rgba(155, 89, 182, 0.05)
+  );
+}
+
+/* Dark Theme Variables for About Section */
+html.dark,
+body.dark {
+  --about-bg-primary: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --about-bg-card: rgba(52, 73, 94, 0.95);
+  --about-border-color: rgba(236, 240, 241, 0.1);
+
+  --about-text-primary: #ecf0f1;
+  --about-text-secondary: #bdc3c7;
+  --about-text-light: #bdc3c7;
+
+  --about-bg-accent: rgba(52, 152, 219, 0.1);
+}
+
+/* About Section Styles */
 .about {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  margin: auto;
-  padding: 2rem;
+  min-height: 100vh;
+  background: var(--about-bg-primary);
+  transition: all 0.3s ease;
 }
 
-.about h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--accent);
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.about-title {
   text-align: center;
-  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--about-text-primary);
+  margin-bottom: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.about-details {
-  width: 80%;
-  margin: auto;
-  padding: 1rem;
+.about-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--about-gradient-primary);
+  border-radius: 2px;
+}
+
+.about-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--about-text-light);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+
+/* Grid Layout */
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.about-description {
-  width: 100%;
-  height: 100%;
+/* About Cards */
+.about-card {
+  background: var(--about-bg-card);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--about-shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--about-border-color);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--about-gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover::before {
+  transform: scaleX(1);
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--about-shadow-lg);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.about-card h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--about-text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-card p {
+  color: var(--about-text-secondary);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Special Card Styles */
+.vision-card {
+  background: var(--about-gradient-vision);
+}
+.mission-card {
+  background: var(--about-gradient-mission);
+}
+.goals-card {
+  background: var(--about-gradient-goals);
+}
+.values-card {
+  background: var(--about-gradient-values);
+}
+.story-card {
+  background: var(--about-gradient-story);
+}
+
+/* Wide Card */
+.wide {
+  grid-column: span 2;
+}
+
+/* Lists */
+.about-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.about-card li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(52, 152, 219, 0.1);
+  color: var(--about-text-secondary);
+  font-size: 1.05rem;
+  position: relative;
+  padding-left: 2rem;
+  transition: all 0.3s ease;
+}
+
+.about-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--about-accent-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.about-card li:hover {
+  color: var(--about-primary-color);
+  transform: translateX(5px);
+}
+
+.about-card li:last-child {
+  border-bottom: none;
+}
+
+/* Values List */
+.values-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--card-shadow);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  gap: 1rem;
+}
+
+.value-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  background: var(--about-bg-accent);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.value-item:hover {
+  background: rgba(52, 152, 219, 0.1);
+  border-left-color: var(--about-primary-color);
+  transform: translateX(5px);
+}
+
+.value-label {
+  font-weight: 600;
+  color: var(--about-text-primary);
+  font-size: 1.1rem;
+}
+
+/* Story Content */
+.story-content {
   text-align: left;
+}
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.achievement {
+  text-align: center;
   padding: 1.5rem;
-  color: var(--text-color);
+  background: rgba(52, 152, 219, 0.05);
+  border-radius: 15px;
+  transition: all 0.3s ease;
 }
 
-.about-description:last-child {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: 50%;
-}
-.about-description:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02) translate(0, -2px);
+.achievement:hover {
+  background: rgba(52, 152, 219, 0.1);
+  transform: translateY(-5px);
 }
 
-.about-description h2 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.about-description p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--text-color);
-  line-height: 1.67;
-}
-
-.about-description ol {
-  list-style: number;
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-  line-height: 1.67;
-}
-
-.about-description span {
-  font-weight: bold;
-}
-
-.about-description ol li {
+.achievement .number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--about-primary-color);
   margin-bottom: 0.5rem;
 }
 
-.about > *:not(:last-child) {
-  border-bottom: 0.125rem solid #e0e0e0;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+.achievement .label {
+  font-size: 1rem;
+  color: var(--about-text-secondary);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .wide {
+    grid-column: span 1;
+  }
+}
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-card {
+    padding: 1.5rem;
+  }
+  .achievement .number {
+    font-size: 2rem;
+  }
 }

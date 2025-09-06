@@ -6,97 +6,118 @@ import VegAbout from "../components/VegAbout";
 function About({ expandedCards, toggleCard }) {
   return (
     <section className="about">
-      <div className="about-content">
-        <h1 className="about-title">About Us</h1>
-        <div className="about-details">
-          <div className="about-description">
-            <h2>Vision</h2>
+      <div className="about-container">
+        <h1 className="about-title">About Fresh Outlet</h1>
+        <p className="about-subtitle">
+          Your trusted partner for fresh vegetables and clean cooking gas
+        </p>
+
+        <div className="about-grid">
+          <div className="about-card vision-card">
+            <div className="card-icon">🎯</div>
+            <h2>Our Vision</h2>
             <p>
-              To be the leading provider of fresh vegetables and clean cooking
-              gas in the region, delivering quality products and reliable
-              services that make everyday life easier.
+              To revolutionize the way communities access fresh produce and
+              cooking gas, becoming the most trusted and convenient delivery
+              service that connects local farms to every household while
+              promoting sustainable living.
             </p>
           </div>
 
-          <div className="about-description">
-            <h2>Mission</h2>
+          <div className="about-card mission-card">
+            <div className="card-icon">🚀</div>
+            <h2>Our Mission</h2>
             <p>
-              To supply, deliver and refill clean cooking gas, and to supply and
-              deliver fresh vegetables directly to households and businesses,
-              ensuring safety, convenience and freshness with every order.
+              We are committed to delivering farm-fresh vegetables and safe
+              cooking gas directly to your doorstep, ensuring quality, safety,
+              and convenience while supporting local farmers and promoting
+              healthy lifestyles in our communities.
             </p>
           </div>
 
-          <div className="about-description">
-            <h2>Goals</h2>
-            <ol>
-              <li>
-                Expand our product range to offer more local produce and
-                household essentials.
-              </li>
-              <li>
-                Enhance our delivery service for speed, reliability and wider
-                coverage.
-              </li>
-              <li>
-                Build lasting partnerships with farmers and reputable gas
-                suppliers.
-              </li>
-              <li>
-                Promote eco-friendly practices in our sourcing, packaging and
-                operations
-              </li>
-            </ol>
+          <div className="about-card goals-card">
+            <div className="card-icon">📋</div>
+            <h2>Strategic Goals</h2>
+            <ul>
+              <li>Expand our network to serve 50+ communities by 2025</li>
+              <li>Achieve same-day delivery across all service areas</li>
+              <li>Partner with 100+ local farmers for direct sourcing</li>
+              <li>Implement 100% eco-friendly packaging solutions</li>
+              <li>Launch mobile app for seamless ordering experience</li>
+            </ul>
           </div>
 
-          <div className="about-description">
-            <h2>Values</h2>
-            <ol>
-              <li>
-                <span>Quality:</span> We guarantee top-grade vegetables and
-                safe, reliable cooking gas.
-              </li>
-              <li>
-                <span>Integrity:</span> We operate with honesty, transparency
-                and accountability.
-              </li>
-              <li>
-                <span>Community:</span> We support local farmers and contribute
-                to community growth.
-              </li>
-              <li>
-                <span>Safety:</span> We adhere to the highest standards for gas
-                handling and delivery.
-              </li>
-              <li>
-                <span>Sustainability:</span> We are committed to environmentally
-                friendly practices in all aspects of our business.
-              </li>
-              <li>
-                <span>Customer First:</span> We prioritize convenience,
-                affordability and satisfaction.
-              </li>
-            </ol>
+          <div className="about-card values-card">
+            <div className="card-icon">💎</div>
+            <h2>Core Values</h2>
+            <div className="values-list">
+              <div className="value-item">
+                <span className="value-label">Excellence:</span>
+                <span>Premium quality in every product and service</span>
+              </div>
+              <div className="value-item">
+                <span className="value-label">Trust:</span>
+                <span>Building lasting relationships through reliability</span>
+              </div>
+              <div className="value-item">
+                <span className="value-label">Innovation:</span>
+                <span>Embracing technology for better service delivery</span>
+              </div>
+              <div className="value-item">
+                <span className="value-label">Sustainability:</span>
+                <span>Protecting our environment for future generations</span>
+              </div>
+              <div className="value-item">
+                <span className="value-label">Community:</span>
+                <span>
+                  Supporting local farmers and strengthening communities
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="about-description">
-            <h2>Our Story</h2>
-            <p>
-              Kibanda Fresh Outlet was born out of a desire to make quality
-              fresh vegetables and safe cooking gas easily accessible to
-              everyone. Starting as a small vendor, we connected directly with
-              farmers and trusted gas suppliers to bring affordable,
-              high-quality products to our community. Today, we proudly sell,
-              refill and deliver vegetables and gas to homes and businesses,
-              combining freshness, safety and convenience in one trusted
-              service.
-            </p>
+          <div className="about-card story-card wide">
+            <div className="card-icon">📖</div>
+            <h2>Our Journey</h2>
+            <div className="story-content">
+              <p>
+                Fresh Outlet began in 2020 when our founder noticed the
+                challenges families faced in accessing fresh vegetables and
+                reliable gas supply. What started as a small local initiative
+                has grown into a comprehensive delivery service that serves
+                thousands of households.
+              </p>
+              <p>
+                Today, we work directly with over 50 local farmers, ensuring
+                fair prices for producers while delivering the freshest
+                vegetables to our customers. Our gas delivery service has become
+                a lifeline for many families, providing safe, reliable cooking
+                fuel with unmatched convenience.
+              </p>
+              <div className="achievements">
+                <div className="achievement">
+                  <span className="number">10,000+</span>
+                  <span className="label">Happy Customers</span>
+                </div>
+                <div className="achievement">
+                  <span className="number">50+</span>
+                  <span className="label">Partner Farms</span>
+                </div>
+                <div className="achievement">
+                  <span className="number">24/7</span>
+                  <span className="label">Service Available</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Product-specific sections */}
       <GasAbout expandedCards={expandedCards} toggleCard={toggleCard} />
       <VegAbout />
     </section>
   );
 }
+
 export default About;
