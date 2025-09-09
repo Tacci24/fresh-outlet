@@ -16,7 +16,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import "./App.css";
+import "./styles/App.css";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,6 +37,12 @@ function App() {
     setExpandedCards((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
+  };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -83,15 +89,36 @@ function App() {
           {/* Sidebar */}
           <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
             <nav className="sidebar-nav">
-              <Link to="/" onClick={closeMenu} className="nav-item">
+              <Link
+                to="/"
+                onClick={() => {
+                  scrollToTop();
+                  closeMenu();
+                }}
+                className="nav-item"
+              >
                 <FontAwesomeIcon icon={faHome} />
                 <span>Home</span>
               </Link>
-              <Link to="/about" onClick={closeMenu} className="nav-item">
+              <Link
+                to="/about"
+                onClick={() => {
+                  scrollToTop();
+                  closeMenu();
+                }}
+                className="nav-item"
+              >
                 <FontAwesomeIcon icon={faInfoCircle} />
                 <span>About</span>
               </Link>
-              <Link to="/contact" onClick={closeMenu} className="nav-item">
+              <Link
+                to="/contact"
+                onClick={() => {
+                  scrollToTop();
+                  closeMenu();
+                }}
+                className="nav-item"
+              >
                 <FontAwesomeIcon icon={faEnvelope} />
                 <span>Contact</span>
               </Link>
@@ -122,7 +149,7 @@ function App() {
         </div>
 
         {/* Footer */}
-        <Footer />
+        <Footer scrollToTop={scrollToTop} />
 
         {/* Overlay for mobile */}
         {menuOpen && <div className="overlay" onClick={closeMenu}></div>}

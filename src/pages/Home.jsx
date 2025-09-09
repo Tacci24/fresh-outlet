@@ -9,7 +9,7 @@ import {
   faTruck,
   faShieldAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import "./Home.css";
+import "../styles/Home.css";
 
 function Home({ expandedCards, toggleCard }) {
   // Show only first 3 gas brands and 6 vegetables for homepage
@@ -93,7 +93,7 @@ function Home({ expandedCards, toggleCard }) {
         </div>
 
         <div className="explore-section">
-          <Link to="/about" className="explore-btn">
+          <Link to="/about#gasabout" className="explore-btn">
             <span>Explore All Gas Brands</span>
             <FontAwesomeIcon icon={faArrowRight} />
           </Link>
@@ -127,7 +127,7 @@ function Home({ expandedCards, toggleCard }) {
         </div>
 
         <div className="explore-section">
-          <Link to="/about" className="explore-btn">
+          <Link to="/about#vegabout" className="explore-btn">
             <span>Explore All Vegetables</span>
             <FontAwesomeIcon icon={faArrowRight} />
           </Link>

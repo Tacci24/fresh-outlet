@@ -1,9 +1,23 @@
-import React from "react";
-import "./About.css";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import "../styles/About.css";
 import GasAbout from "../components/GasAbout";
 import VegAbout from "../components/VegAbout";
 
 function About({ expandedCards, toggleCard }) {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
+
   return (
     <section className="about">
       <div className="about-container">
@@ -114,8 +128,12 @@ function About({ expandedCards, toggleCard }) {
       </div>
 
       {/* Product-specific sections */}
-      <GasAbout expandedCards={expandedCards} toggleCard={toggleCard} />
-      <VegAbout />
+      <div id="gasabout">
+        <GasAbout expandedCards={expandedCards} toggleCard={toggleCard} />
+      </div>
+      <div id="vegabout">
+        <VegAbout />
+      </div>
     </section>
   );
 }

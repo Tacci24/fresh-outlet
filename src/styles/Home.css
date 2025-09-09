@@ -14,7 +14,7 @@
   --shad-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shad-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shad-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --grad-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --grad-primary: linear-gradient(135deg, #448c8f 0%, #156935 100%);
   --grad-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --grad-success: linear-gradient(
     135deg,
@@ -575,7 +575,7 @@ body.dark {
 
   .home-gas-grid,
   .home-vegetable-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
   }
 
@@ -607,10 +607,48 @@ body.dark {
     font-size: 1.8rem;
   }
 
+  .home-gas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-brand-name {
+    font-size: 1rem;
+  }
+
+  .home-gas-image {
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+
   .home-gas-card,
   .home-veg-card,
   .feature-card {
     padding: 1.5rem;
+  }
+
+  .home-vegetable-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-veg-image {
+    height: 100px;
+  }
+
+  .home-veg-name {
+    font-size: 1rem;
+  }
+
+  .home-veg-desc {
+    font-size: 0.7rem;
+  }
+
+  .home-veg-price {
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
 

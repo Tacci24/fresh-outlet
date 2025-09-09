@@ -749,11 +749,11 @@ body.dark {
   }
 
   .gas-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .gas-subtitle {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .intro-content {
@@ -761,13 +761,14 @@ body.dark {
     gap: 1.5rem;
   }
 
+  /* Updated: Keep at least 2 gas cards on mobile */
   .gas-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
   .promise-stats {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1.5rem;
   }
 
@@ -811,8 +812,29 @@ body.dark {
     padding: 1.5rem;
   }
 
+  /* Updated: Maintain 2 columns but reduce minimum width for very small screens */
+  .gas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .gas-image-wrapper {
-    height: 180px;
+    height: 120px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .cylinder-title {
+    font-size: 0.8rem;
+  }
+
+  .cylinder-size,
+  .cylinder-price {
+    font-size: 0.8rem;
   }
 }
 

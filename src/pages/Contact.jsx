@@ -15,7 +15,7 @@ import {
   faTiktok,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import "./Contact.css";
+import "../styles/Contact.css";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -90,9 +90,21 @@ function Contact() {
             <div className="info-card">
               <FontAwesomeIcon icon={faLocationDot} className="info-icon" />
               <div className="info-details">
-                <h3>Location</h3>
-                <p>Kariobangi South, Nairobi</p>
-                <p>Kenya</p>
+                <h3>Visit Our Store</h3>
+                <div className="location-map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.376050251221!2d36.875219960900935!3d-1.266245729547144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f141444872aa3%3A0x2950a422e5e82493!2sKariobangi%20South%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1757440991683!5m2!1sen!2ske"
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Fresh Outlet Location"
+                    className="map-iframe"
+                  />
+                </div>
+                <div className="location-text">
+                  <p>📍 Kariobangi South, Nairobi, Kenya</p>
+                  <p>🕒 Mon-Sun: 8:00 AM - 8:00 PM</p>
+                </div>
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import vegetables from "../data/vegetables";
-import "./VegAbout.css";
+import "../styles/VegAbout.css";
 
 function VegAbout() {
   return (

@@ -490,19 +490,21 @@ body.dark {
   }
 
   .veg-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .veg-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 
   .intro-content {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .vegetable-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .promise-stats {

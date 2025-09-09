@@ -33,7 +33,6 @@ Our goal is to build customer trust and drive conversions through a beautiful, m
 - Multiple contact methods (phone, WhatsApp, email)
 - Business location
 - Operating hours and delivery zones
-- Quick order form
 
 ### 📱 **Technical Features**
 
@@ -76,6 +75,7 @@ src/
 │   ├── Home/
 │   ├── About/
 │   └── Contact/
+├── styles/
 ├── assets/
 ├── data/
 ├── App/

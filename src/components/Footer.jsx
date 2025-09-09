@@ -19,14 +19,10 @@ import {
   faTiktok,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import "./Footer.css";
+import "../styles/Footer.css";
 
-function Footer() {
+function Footer({ scrollToTop }) {
   const currentYear = new Date().getFullYear();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <footer className="footer">
@@ -122,17 +118,25 @@ function Footer() {
               <h4 className="links-subtitle">Navigation</h4>
               <ul className="footer-links-list">
                 <li>
-                  <Link to="/" className="footer-link">
+                  <Link to="/" className="footer-link" onClick={scrollToTop}>
                     <span>Home</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="footer-link">
+                  <Link
+                    to="/about"
+                    className="footer-link"
+                    onClick={scrollToTop}
+                  >
                     <span>About Us</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="footer-link">
+                  <Link
+                    to="/contact"
+                    className="footer-link"
+                    onClick={scrollToTop}
+                  >
                     <span>Contact</span>
                   </Link>
                 </li>
@@ -248,8 +252,7 @@ function Footer() {
           <div className="copyright">
             <p>&copy; {currentYear} Fresh Outlet. All rights reserved.</p>
             <p className="designer-credit">
-              Designed with{" "}
-              <FontAwesomeIcon icon={faHeart} className="heart-icon" /> by
+              Designed by
               <span className="designer-name"> Tacci </span>
             </p>
           </div>
@@ -261,8 +264,13 @@ function Footer() {
             <a href="#terms" className="footer-bottom-link">
               Terms of Service
             </a>
-            <a href="#sitemap" className="footer-bottom-link">
-              Sitemap
+            <a
+              href="https://maps.google.com/?q=Kariobangi+South,+Nairobi,+Kenya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-bottom-link"
+            >
+              Site Map
             </a>
           </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import gasBrands from "../data/gas";
-import "./GasAbout.css";
+import "../styles/GasAbout.css";
 
 function GasAbout({ expandedCards, toggleCard }) {
   return (
